@@ -33,6 +33,14 @@ ball.color("white")
 ball.shapesize(stretch_wid=1 ,stretch_len=1)
 ball.penup()
 ball.goto(0, 0)
+#Function
+def paddle_a_up():
+    y = paddle_a.ycor()
+    y +=20
+    paddle_a.sety(y)
+#Keyboard Binding
+wn.listen()
+wn.onkeypress(paddle_a_up, "w")    
 # Main game loop
 while True:
     wn.update () #every time the loop runs it updates the screen
