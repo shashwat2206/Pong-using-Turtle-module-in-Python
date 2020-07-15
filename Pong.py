@@ -33,6 +33,8 @@ ball.color("white")
 ball.shapesize(stretch_wid=1 ,stretch_len=1)
 ball.penup()
 ball.goto(0, 0)
+ball.dx = 0.25
+ball.dy = 0.25
 #Function
 def paddle_a_up():
     y = paddle_a.ycor()
@@ -63,5 +65,20 @@ wn.onkeypress(paddle_b_down, "Down")
 # Main game loop
 while True:
     wn.update () #every time the loop runs it updates the screen
+    # Moving the Ball
+    ball.setx(ball.xcor() + ball.dx )
+    ball.sety(ball.ycor() + ball.dy )
+    if ball.ycor() > 290:
+        ball.sety(290)
+        ball.dy *= -1
 
+    elif ball.ycor() < -290:
+        ball.sety(-290)
+        ball.dy *= -1
+    if ball.xcor() > 390 :
+        ball.goto(0,0)
+        ball.dx *= -1
+    elif ball.xcor() < -390 :
+        ball.goto(0,0)
+        ball.dx *= -1
 
