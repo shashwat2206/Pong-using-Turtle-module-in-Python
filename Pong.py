@@ -25,7 +25,14 @@ paddle_b.color("white")
 paddle_b.shapesize(stretch_wid=5,stretch_len=1)
 paddle_b.penup()
 paddle_b.goto(350, 0)
-
+#Ball
+ball = turtle.Turtle()
+ball.speed(0)
+ball.shape("square")
+ball.color("white")
+ball.shapesize(stretch_wid=1 ,stretch_len=1)
+ball.penup()
+ball.goto(0, 0)
 # Main game loop
 while True:
     wn.update () #every time the loop runs it updates the screen
